@@ -1,0 +1,10 @@
+{
+  "name": "@open-tech-world/ruby-repl",
+  "version": "0.0.1",
+  "description": "Oflline Ruby REPL",
+  "main": "main.js",
+  "repository": "git@github.com:open-tech-world/ruby-repl.git",
+  "author": "Thanga Ganapathy",
+  "license": "MIT",
+  "private": false
+}
