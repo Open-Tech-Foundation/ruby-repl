@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   target: 'electron-renderer',
-  entry: './src/index.js',
+  entry: './app/render/index.js',
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, 'dist'),
@@ -17,7 +17,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Ruby REPL',
-      template: path.resolve(__dirname, 'src/index.html'),
+      template: path.resolve(__dirname, 'app/render/index.html'),
     }),
   ],
   module: {

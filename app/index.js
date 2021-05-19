@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu } = require("electron");
+const { app, BrowserWindow, Menu } = require('electron');
 
 Menu.setApplicationMenu(null);
 
@@ -12,22 +12,22 @@ function createWindow() {
       enableRemoteModule: true,
     },
   });
-  win.loadURL("http://localhost:8080/");
+  win.loadURL('http://localhost:8080/');
   win.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {
   createWindow();
 
-  app.on("activate", () => {
+  app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
       createWindow();
     }
   });
 });
 
-app.on("window-all-closed", () => {
-  if (process.platform !== "darwin") {
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
     app.quit();
   }
 });
