@@ -1,5 +1,7 @@
 import { Box, Paper } from '@material-ui/core';
 
+import Header from './Header';
+
 export default function App() {
   return (
     <Paper
@@ -9,7 +11,7 @@ export default function App() {
       <Box
         sx={{ height: '100%', display: 'grid', gridTemplateRows: '50px 1fr' }}
       >
-        <Box>Header</Box>
+        <Header />
         <Box sx={{ display: 'grid', gridTemplateColumns: '50% 50%' }}>
           <Box>Editor</Box>
           <Box>Output</Box>
