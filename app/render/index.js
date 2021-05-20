@@ -3,6 +3,8 @@ import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
 import Root from './Root';
 
+import '@fontsource/roboto';
+
 const theme = createTheme({
   palette: {
     mode: 'dark',
