@@ -1290,6 +1290,69 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@date-io/core@npm:^2.10.7":
+  version: 2.10.7
+  resolution: "@date-io/core@npm:2.10.7"
+  checksum: 2e616bc3b01df12a240c24725f3d9b8a8471997a55c2ceb807fdad99084b6b200d46f31b9eb6f4761436861cbea9b45dbbc08edddf47220e77a5b8561f03e0da
+  languageName: node
+  linkType: hard
+
+"@date-io/date-fns@npm:^2.10.6":
+  version: 2.10.8
+  resolution: "@date-io/date-fns@npm:2.10.8"
+  dependencies:
+    "@date-io/core": ^2.10.7
+  peerDependencies:
+    date-fns: ^2.0.0
+  peerDependenciesMeta:
+    date-fns:
+      optional: true
+  checksum: 32296fdcb270045388b71ea49c3041770718d739d23b846b7e710167097f0d3c4d5560c88087eb28af84d63d93d2481dbef824134769b0a739eb455f127e9c19
+  languageName: node
+  linkType: hard
+
+"@date-io/dayjs@npm:^2.10.6":
+  version: 2.10.8
+  resolution: "@date-io/dayjs@npm:2.10.8"
+  dependencies:
+    "@date-io/core": ^2.10.7
+  peerDependencies:
+    dayjs: ^1.8.17
+  peerDependenciesMeta:
+    dayjs:
+      optional: true
+  checksum: 405a6f300766deb3e3fbbced7f1998b23db375a99afe89c777e24220a9d2e4339a18a6042adfaf9014f23d5480a99be16611065dd5e60727ee04f335291e3977
+  languageName: node
+  linkType: hard
+
+"@date-io/luxon@npm:^2.10.6":
+  version: 2.10.8
+  resolution: "@date-io/luxon@npm:2.10.8"
+  dependencies:
+    "@date-io/core": ^2.10.7
+  peerDependencies:
+    luxon: ^1.21.3
+  peerDependenciesMeta:
+    luxon:
+      optional: true
+  checksum: fba0f8698aeaffaf63231021e516345b63fa3a004740e85c4cea7d7aa638f9d3f03ba1188c12a7d1a5a151fe50fb652d6833617528aa9d5e48e77e750d201003
+  languageName: node
+  linkType: hard
+
+"@date-io/moment@npm:^2.10.6":
+  version: 2.10.8
+  resolution: "@date-io/moment@npm:2.10.8"
+  dependencies:
+    "@date-io/core": ^2.10.7
+  peerDependencies:
+    moment: ^2.24.0
+  peerDependenciesMeta:
+    moment:
+      optional: true
+  checksum: 4f9494da0df2b6bcbd1ccb3ad04fa73a912f8daab356e13fef57468a79dc256af1019800f877f42e1e85abdd47f66d532aeab9ca9d0d5984c9c7450cb251ef63
+  languageName: node
+  linkType: hard
+
 "@discoveryjs/json-ext@npm:^0.5.0":
   version: 0.5.3
   resolution: "@discoveryjs/json-ext@npm:0.5.3"
@@ -1524,6 +1587,62 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@material-ui/icons@npm:^4.11.2":
+  version: 4.11.2
+  resolution: "@material-ui/icons@npm:4.11.2"
+  dependencies:
+    "@babel/runtime": ^7.4.4
+  peerDependencies:
+    "@material-ui/core": ^4.0.0
+    "@types/react": ^16.8.6 || ^17.0.0
+    react: ^16.8.0 || ^17.0.0
+    react-dom: ^16.8.0 || ^17.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 0f5f70d10581e50e96dadf4d7cd5ef2acdc135e460a74eb29fdeecd5fd98fb1caae9692979997438a9606c193b52b6e0186cabf57af1352fa92221b7eb71ea83
+  languageName: node
+  linkType: hard
+
+"@material-ui/lab@npm:next":
+  version: 5.0.0-alpha.34
+  resolution: "@material-ui/lab@npm:5.0.0-alpha.34"
+  dependencies:
+    "@babel/runtime": ^7.4.4
+    "@date-io/date-fns": ^2.10.6
+    "@date-io/dayjs": ^2.10.6
+    "@date-io/luxon": ^2.10.6
+    "@date-io/moment": ^2.10.6
+    "@material-ui/system": 5.0.0-alpha.34
+    "@material-ui/utils": 5.0.0-alpha.33
+    clsx: ^1.0.4
+    prop-types: ^15.7.2
+    react-is: ^17.0.0
+    react-transition-group: ^4.4.1
+    rifm: ^0.12.0
+  peerDependencies:
+    "@material-ui/core": ^5.0.0-alpha.18
+    "@types/react": ^16.8.6 || ^17.0.0
+    date-fns: ^2.0.0
+    dayjs: ^1.8.17
+    luxon: ^1.21.3
+    moment: ^2.24.0
+    react: ^17.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    date-fns:
+      optional: true
+    dayjs:
+      optional: true
+    luxon:
+      optional: true
+    moment:
+      optional: true
+  checksum: 1437d6057f6519eab5f4f41f96f9b789309ccf802c4a125b44e68952c9f38530ed8f5370bee870cbe8438c21ef173b14dfcd4db70f7e3cf9b28fe6b21c98e5d9
+  languageName: node
+  linkType: hard
+
 "@material-ui/private-theming@npm:5.0.0-alpha.33":
   version: 5.0.0-alpha.33
   resolution: "@material-ui/private-theming@npm:5.0.0-alpha.33"
@@ -1679,6 +1798,8 @@ __metadata:
     "@emotion/styled": ^11.3.0
     "@fontsource/roboto": ^4.3.0
     "@material-ui/core": next
+    "@material-ui/icons": ^4.11.2
+    "@material-ui/lab": next
     babel-loader: ^8.2.2
     css-loader: ^5.2.4
     electron: ^12.0.8
@@ -7115,7 +7236,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-transition-group@npm:^4.4.0":
+"react-transition-group@npm:^4.4.0, react-transition-group@npm:^4.4.1":
   version: 4.4.1
   resolution: "react-transition-group@npm:4.4.1"
   dependencies:
@@ -7452,6 +7573,15 @@ resolve@^2.0.0-next.3:
   version: 0.12.0
   resolution: "retry@npm:0.12.0"
   checksum: 51f2fddddb2f157a0738c53c515682813a881df566da36992f3cf0a975ea84a19434c5abbc682056e97351540bcc7ea38fce2622d0b191c3b5cc1020b71ea0f2
+  languageName: node
+  linkType: hard
+
+"rifm@npm:^0.12.0":
+  version: 0.12.0
+  resolution: "rifm@npm:0.12.0"
+  peerDependencies:
+    react: ">=16.8"
+  checksum: bca3419639425beb04e8f6376659f6084475768119fba5710021fe646e16807370465c8fc69f6c42d0a618c7c9541d41fb6a6eb48329cf7b1d0654d59bd86ec2
   languageName: node
   linkType: hard
 
