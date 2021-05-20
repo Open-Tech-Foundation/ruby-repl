@@ -7,7 +7,11 @@ export default function Header() {
     <Box>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <img src={RubyLogo} alt="The Ruby Logo" width="25px" height="25px" />
-        <Box component="span" ml="5px">
+        <Box
+          component="span"
+          ml="5px"
+          sx={{ fontSize: '25px', letterSpacing: '1px' }}
+        >
           REPL
         </Box>
       </Box>
