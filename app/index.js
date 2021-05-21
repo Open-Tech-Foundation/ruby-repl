@@ -1,4 +1,5 @@
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
+const path = require('path');
 
 Menu.setApplicationMenu(null);
 
@@ -7,9 +8,7 @@ function createWindow() {
     width: 1366,
     height: 784,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
-      enableRemoteModule: true,
+      preload: path.join(__dirname, './main/preload.js'),
     },
   });
   win.loadURL('http://localhost:8080/');

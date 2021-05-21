@@ -1,15 +1,14 @@
 import { Box } from '@material-ui/core';
 import { useEffect, useState } from 'react';
-import { ipcRenderer } from 'electron';
 
 export default function Footer() {
-  const [version, serVersion] = useState('Checking for ruby...');
+  const [version, setVersion] = useState('Checking for ruby...');
 
   useEffect(() => {
-    ipcRenderer.on('get-ruby-version-reply', (event, version) => {
-      serVersion(version);
-    });
-    ipcRenderer.send('get-ruby-version');
+    async function getRubyVersion() {
+      setVersion(await window.electron.getRubyVersion());
+    }
+    getRubyVersion();
   }, []);
 
   return (
