@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "electron": "electron .",
-    "webpack": "webpack serve"
+    "build": "webpack --config webpack.prod.js"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
