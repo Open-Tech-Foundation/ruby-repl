@@ -1,9 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  target: 'electron-renderer',
   entry: './app/render/index.js',
   output: {
     filename: 'app.js',
@@ -19,6 +19,7 @@ module.exports = {
       title: 'Ruby REPL',
       template: path.resolve(__dirname, 'app/render/index.html'),
     }),
+    new MonacoWebpackPlugin(),
   ],
   module: {
     rules: [
