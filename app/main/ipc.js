@@ -9,24 +9,41 @@ ipcMain.handle('get-ruby-version', async () => {
   const subprocess = spawn('ruby', ['-v']);
 
   return new Promise((resolve) => {
-  subprocess.stdout.on('data', (data) => {
+    subprocess.stdout.on('data', (data) => {
       resolve(data.toString());
-  });
+    });
 
-  subprocess.stderr.on('data', () => {
+    subprocess.stderr.on('data', () => {
       resolve('No ruby found');
     });
   });
 });
 
-ipcMain.on('load-file', (event, filename) => {
+ipcMain.handle('load-file', async (event, filename) => {
   const userFilesDir = getUserFilesDir();
   const filePath = path.join(userFilesDir, filename);
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    event.reply('load-file-reply', data);
+  return new Promise((resolve) => {
+    fs.readFile(filePath, 'utf8', (err, data) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      resolve(data);
+    });
+  });
+});
+
+ipcMain.handle('save-file', async (event, filename, content) => {
+  console.log('Saving file: ', filename);
+  const userFilesDir = getUserFilesDir();
+  const filePath = path.join(userFilesDir, filename);
+  return new Promise((resolve) => {
+    fs.writeFile(filePath, content, (err) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      resolve();
+    });
   });
 });
