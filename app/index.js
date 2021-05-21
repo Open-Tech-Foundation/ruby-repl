@@ -1,5 +1,7 @@
-const { app, BrowserWindow, Menu, ipcMain } = require('electron');
+const { app, BrowserWindow, Menu } = require('electron');
 const path = require('path');
+
+require('./main/ipc');
 const initialSetup = require('./main/initialSetup');
 
 initialSetup();
@@ -32,18 +34,4 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
-});
-
-ipcMain.on('get-ruby-version', (event) => {
-  const { spawn } = require('child_process');
-
-  const subprocess = spawn('ruby', ['-v']);
-
-  subprocess.stdout.on('data', (data) => {
-    event.reply('get-ruby-version-reply', data.toString());
-  });
-
-  subprocess.stderr.on('data', () => {
-    event.reply('get-ruby-version-reply', 'No ruby found');
-  });
 });
