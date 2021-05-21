@@ -1,5 +1,8 @@
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const path = require('path');
+const initialSetup = require('./main/initialSetup');
+
+initialSetup();
 
 Menu.setApplicationMenu(null);
 
