@@ -1,8 +1,8 @@
 const { app, BrowserWindow, Menu } = require('electron');
 const path = require('path');
 
-require('./main/ipc');
 const initialSetup = require('./main/initialSetup');
+require('./main/ipc');
 
 initialSetup();
 
