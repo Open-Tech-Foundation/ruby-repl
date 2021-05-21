@@ -16,7 +16,14 @@ export default function App() {
       >
         <Header />
         <Divider />
-        <Box mt={1} sx={{ display: 'grid', gridTemplateColumns: '50% 50%' }}>
+        <Box
+          mt={1}
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: '50% 50%',
+            padding: '0px 15px',
+          }}
+        >
           <Editor />
           <Box>Output &gt;</Box>
         </Box>
