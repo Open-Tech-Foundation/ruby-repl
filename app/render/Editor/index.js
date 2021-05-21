@@ -3,14 +3,13 @@ import * as monacoEditor from 'monaco-editor';
 import { useEffect, useRef } from 'react';
 
 export default function Editor() {
-  const editorDefaultValue = "def msg\n\t'I 😍 RUBY'\nend\n\nputs msg";
+  const editorContainerRef = useRef(null);
   const editorRef = useRef(null);
 
   useEffect(() => {
-    editorRef.current = monacoEditor.editor.create(editorRef.current, {
+    editorRef.current = monacoEditor.editor.create(editorContainerRef.current, {
       language: 'ruby',
       theme: 'vs-dark',
-      value: editorDefaultValue,
       tabSize: 2,
     });
 
@@ -18,7 +17,13 @@ export default function Editor() {
       console.log(editorRef.current.getValue());
       console.log(e);
     });
-  }, [editorRef]);
+    loadFileToEditor('main.rb');
+  }, []);
 
-  return <Box ref={editorRef} />;
+  async function loadFileToEditor(filename) {
+    const content = await window.electron.loadFile(filename);
+    editorRef.current.getModel().setValue(content);
+  }
+
+  return <Box ref={editorContainerRef} />;
 }

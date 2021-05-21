@@ -9,4 +9,12 @@ contextBridge.exposeInMainWorld('electron', {
       ipcRenderer.send('get-ruby-version');
     });
   },
+  loadFile: async (filename) => {
+    return new Promise((resolve) => {
+      ipcRenderer.on('load-file-reply', (event, fileContent) => {
+        resolve(fileContent);
+      });
+      ipcRenderer.send('load-file', filename);
+    });
+  },
 });
