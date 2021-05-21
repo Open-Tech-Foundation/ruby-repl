@@ -4,17 +4,18 @@ const fs = require('fs');
 
 const getUserFilesDir = require('./getUserFilesDir');
 
-ipcMain.on('get-ruby-version', (event) => {
+ipcMain.handle('get-ruby-version', async () => {
   const { spawn } = require('child_process');
-
   const subprocess = spawn('ruby', ['-v']);
 
+  return new Promise((resolve) => {
   subprocess.stdout.on('data', (data) => {
-    event.reply('get-ruby-version-reply', data.toString());
+      resolve(data.toString());
   });
 
   subprocess.stderr.on('data', () => {
-    event.reply('get-ruby-version-reply', 'No ruby found');
+      resolve('No ruby found');
+    });
   });
 });
 

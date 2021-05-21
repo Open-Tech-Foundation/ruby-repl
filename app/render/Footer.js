@@ -6,7 +6,7 @@ export default function Footer() {
 
   useEffect(() => {
     async function getRubyVersion() {
-      setVersion(await window.electron.getRubyVersion());
+      setVersion(await window.electron.invoke('get-ruby-version'));
     }
     getRubyVersion();
   }, []);
