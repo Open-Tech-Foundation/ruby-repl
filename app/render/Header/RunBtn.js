@@ -3,13 +3,22 @@ import { LoadingButton } from '@material-ui/lab';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import { useState } from 'react';
 
+import { useDispatch, useSelector } from '../store';
+
 export default function RunBtn() {
   const [loading, setLoading] = useState(false);
+  const outputList = useSelector('outputList') || [];
+  const dispatch = useDispatch();
 
   const handleClick = async () => {
     setLoading(true);
     const output = await window.electron.invoke('run-file');
     console.log(output);
+    dispatch({
+      type: 'set',
+      key: 'outputList',
+      payload: [...outputList, output],
+    });
     setLoading(false);
   };
 

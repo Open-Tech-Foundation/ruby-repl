@@ -3,6 +3,7 @@ import { Box, Divider, Paper } from '@material-ui/core';
 import Editor from './Editor';
 import Footer from './Footer';
 import Header from './Header';
+import Output from './Output';
 
 export default function App() {
   return (
@@ -25,7 +26,7 @@ export default function App() {
           }}
         >
           <Editor />
-          <Box>Output &gt;</Box>
+          <Output />
         </Box>
         <Footer />
       </Box>
