@@ -54,12 +54,20 @@ ipcMain.handle('run-file', async () => {
   const subprocess = spawn('ruby', [mainFilePath]);
 
   return new Promise((resolve) => {
+    const result = {};
     subprocess.stdout.on('data', (data) => {
-      resolve(data.toString());
+      result.stdout = data.toString();
     });
 
     subprocess.stderr.on('data', (error) => {
-      resolve(error.toString());
+      result.stderr = error.toString();
+    });
+
+    subprocess.on('close', (code) => {
+      if (code !== 0) {
+        result.code = code;
+      }
+      resolve(result);
     });
   });
 });
