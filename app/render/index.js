@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import '@fontsource/roboto';
 
 import Root from './Root';
-
-import '@fontsource/roboto';
+import { StoreProvider, useStore } from './store';
 
 const theme = createTheme({
   palette: {
@@ -13,9 +13,13 @@ const theme = createTheme({
 });
 
 function App() {
+  const store = useStore();
+
   return (
     <ThemeProvider theme={theme}>
-      <Root />
+      <StoreProvider value={store}>
+        <Root />
+      </StoreProvider>
     </ThemeProvider>
   );
 }
