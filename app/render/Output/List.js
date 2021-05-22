@@ -2,10 +2,14 @@ import { Box, Paper } from '@material-ui/core';
 
 export default function List({ outputs }) {
   return outputs.map((output, i) => (
-    <Paper sx={{ padding: '15px', marginTop: '15px' }} key={i}>
-      <span>Output &gt;</span>
+    <Paper sx={{ padding: '5px', marginTop: '5px' }} key={i}>
       <Box>
-        <pre>{output}</pre>
+        <Box
+          component="pre"
+          sx={{ whiteSpace: 'pre-wrap', wordBreak: 'keep-all' }}
+        >
+          {output}
+        </Box>
       </Box>
     </Paper>
   ));

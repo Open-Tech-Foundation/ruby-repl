@@ -18,11 +18,11 @@ export default function App() {
         <Header />
         <Divider />
         <Box
-          mt={1}
           sx={{
+            height: '100%',
             display: 'grid',
             gridTemplateColumns: '50% 50%',
-            padding: '0px 15px',
+            overflow: 'hidden',
           }}
         >
           <Editor />
