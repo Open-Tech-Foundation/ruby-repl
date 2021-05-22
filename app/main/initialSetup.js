@@ -11,7 +11,7 @@ function initialSetup() {
 
   const mainFilePath = path.join(userFilesDir, 'main.rb');
   if (!fs.existsSync(mainFilePath)) {
-    const content = "def msg\n  'I 😍 RUBY'\nend\n\nputs msg";
+    const content = "def msg\n  'I ❤️ Ruby'\nend\n\nputs msg";
     try {
       fs.writeFileSync(mainFilePath, content);
     } catch (err) {
