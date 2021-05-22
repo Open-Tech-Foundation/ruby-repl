@@ -6,8 +6,11 @@ import { useState } from 'react';
 export default function RunBtn() {
   const [loading, setLoading] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setLoading(true);
+    const output = await window.electron.invoke('run-file');
+    console.log(output);
+    setLoading(false);
   };
 
   return (

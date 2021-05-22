@@ -4,6 +4,8 @@ const fs = require('fs');
 
 const getUserFilesDir = require('./getUserFilesDir');
 
+const userFilesDir = getUserFilesDir();
+
 ipcMain.handle('get-ruby-version', async () => {
   const { spawn } = require('child_process');
   const subprocess = spawn('ruby', ['-v']);
@@ -20,7 +22,6 @@ ipcMain.handle('get-ruby-version', async () => {
 });
 
 ipcMain.handle('load-file', async (event, filename) => {
-  const userFilesDir = getUserFilesDir();
   const filePath = path.join(userFilesDir, filename);
   return new Promise((resolve) => {
     fs.readFile(filePath, 'utf8', (err, data) => {
@@ -35,7 +36,6 @@ ipcMain.handle('load-file', async (event, filename) => {
 
 ipcMain.handle('save-file', async (event, filename, content) => {
   console.log('Saving file: ', filename);
-  const userFilesDir = getUserFilesDir();
   const filePath = path.join(userFilesDir, filename);
   return new Promise((resolve) => {
     fs.writeFile(filePath, content, (err) => {
@@ -44,6 +44,22 @@ ipcMain.handle('save-file', async (event, filename, content) => {
         return;
       }
       resolve();
+    });
+  });
+});
+
+ipcMain.handle('run-file', async () => {
+  const mainFilePath = path.join(userFilesDir, 'main.rb');
+  const { spawn } = require('child_process');
+  const subprocess = spawn('ruby', [mainFilePath]);
+
+  return new Promise((resolve) => {
+    subprocess.stdout.on('data', (data) => {
+      resolve(data.toString());
+    });
+
+    subprocess.stderr.on('data', (error) => {
+      resolve(error.toString());
     });
   });
 });
