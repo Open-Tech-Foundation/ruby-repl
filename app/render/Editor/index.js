@@ -34,5 +34,5 @@ export default function Editor() {
     await window.electron.invoke('save-file', 'main.rb', content);
   }
 
-  return <Box ref={editorContainerRef} />;
+  return <Box sx={{ marginTop: '5px' }} ref={editorContainerRef} />;
 }

@@ -1,4 +1,4 @@
-import { Box } from '@material-ui/core';
+import { Box, Paper } from '@material-ui/core';
 
 import { useSelector } from '../store';
 import Header from './Header';
@@ -8,7 +8,8 @@ export default function Output() {
   const outputList = useSelector('outputList') || [];
 
   return (
-    <Box
+    <Paper
+      elevation={0}
       sx={{
         boxSizing: 'border-box',
         height: '100%',
@@ -19,6 +20,6 @@ export default function Output() {
       <Box sx={{ padding: '15px' }}>
         <List outputs={outputList} />
       </Box>
-    </Box>
+    </Paper>
   );
 }

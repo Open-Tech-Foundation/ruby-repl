@@ -20,6 +20,7 @@ export default function Header() {
       }}
     >
       <Paper
+        elevation={0}
         square
         sx={{
           display: 'flex',
