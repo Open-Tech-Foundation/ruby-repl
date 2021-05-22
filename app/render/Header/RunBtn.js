@@ -13,7 +13,6 @@ export default function RunBtn() {
   const handleClick = async () => {
     setLoading(true);
     const output = await window.electron.invoke('run-file');
-    console.log(output);
     dispatch({
       type: 'set',
       key: 'outputList',

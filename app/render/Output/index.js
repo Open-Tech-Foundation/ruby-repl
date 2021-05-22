@@ -1,6 +1,7 @@
 import { Box } from '@material-ui/core';
 
 import { useSelector } from '../store';
+import Header from './Header';
 import List from './List';
 
 export default function Output() {
@@ -9,14 +10,15 @@ export default function Output() {
   return (
     <Box
       sx={{
-        padding: '15px',
         boxSizing: 'border-box',
         height: '100%',
         overflow: 'hidden auto',
       }}
     >
-      <span>Output &gt;</span>
-      <List outputs={outputList} />
+      <Header />
+      <Box sx={{ padding: '15px' }}>
+        <List outputs={outputList} />
+      </Box>
     </Box>
   );
 }
