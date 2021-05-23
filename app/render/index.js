@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import darkScrollbar from '@material-ui/core/darkScrollbar';
 import '@fontsource/roboto';
 
 import Root from './Root';
@@ -9,6 +10,13 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     divider: 'rgba(255,255,255,0.12)',
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: darkScrollbar(),
+      },
+    },
   },
 });
 
