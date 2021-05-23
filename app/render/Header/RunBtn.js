@@ -30,6 +30,7 @@ export default function RunBtn() {
         variant="contained"
         endIcon={<PlayArrowIcon />}
         onClick={handleClick}
+        size="small"
       >
         Run
       </LoadingButton>
