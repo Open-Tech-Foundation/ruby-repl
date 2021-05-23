@@ -1800,7 +1800,7 @@ __metadata:
     "@material-ui/core": next
     "@material-ui/icons": ^4.11.2
     "@material-ui/lab": next
-    ansi-to-html: ^0.6.15
+    anser: ^2.0.1
     babel-loader: ^8.2.2
     css-loader: ^5.2.4
     electron: ^12.0.8
@@ -2306,6 +2306,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"anser@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "anser@npm:2.0.1"
+  checksum: 97949bee3f76cb57ce46b7049c862882f38b2f02cdd337891cda2147817cdc9a49b3c8688d5cd74201eb6a9aad58826b00814ee2d8503f5e0619894621bb1dfb
+  languageName: node
+  linkType: hard
+
 "ansi-colors@npm:^3.0.0":
   version: 3.2.4
   resolution: "ansi-colors@npm:3.2.4"
@@ -2372,17 +2379,6 @@ __metadata:
   dependencies:
     color-convert: ^2.0.1
   checksum: ea02c0179f3dd089a161f5fdd7ccd89dd84f31d82b68869f1134bf5c5b9e1313dadd2ff9edb02b44f46243f285ef5b785f6cb61c84a293694221417c42934407
-  languageName: node
-  linkType: hard
-
-"ansi-to-html@npm:^0.6.15":
-  version: 0.6.15
-  resolution: "ansi-to-html@npm:0.6.15"
-  dependencies:
-    entities: ^2.0.0
-  bin:
-    ansi-to-html: bin/ansi-to-html
-  checksum: 8b760cecbfbe55fca226febe3b7fecdd15e23e6e7df90f336ad79a9823e034f6cfb0ab63a60880c176f72689599586a7b55312eaae663c42eec07ba9d6468c2d
   languageName: node
   linkType: hard
 

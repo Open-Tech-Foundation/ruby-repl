@@ -52,13 +52,11 @@ ipcMain.handle('run-file', async () => {
   const mainFilePath = path.join(userFilesDir, 'main.rb');
   const { spawn } = require('child_process');
   const subprocess = spawn('ruby', [mainFilePath]);
-  const Convert = require('ansi-to-html');
-  const convert = new Convert();
 
   return new Promise((resolve) => {
     const result = {};
     subprocess.stdout.on('data', (data) => {
-      result.stdout = convert.toHtml(data.toString());
+      result.stdout = data.toString();
     });
 
     subprocess.stderr.on('data', (error) => {
@@ -66,9 +64,7 @@ ipcMain.handle('run-file', async () => {
     });
 
     subprocess.on('close', (code) => {
-      if (code !== 0) {
-        result.code = code;
-      }
+      result.code = code;
       resolve(result);
     });
   });
