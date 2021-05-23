@@ -12,6 +12,9 @@ export default function Editor() {
       language: 'ruby',
       theme: 'vs-dark',
       tabSize: 2,
+      padding: {
+        top: 15,
+      },
     });
     loadFileToEditor('main.rb');
   }, []);

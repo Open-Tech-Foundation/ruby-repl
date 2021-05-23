@@ -1,4 +1,4 @@
-import { Box, Divider, Paper } from '@material-ui/core';
+import { Box, Paper } from '@material-ui/core';
 
 import Editor from './Editor';
 import Footer from './Footer';
@@ -7,16 +7,15 @@ import Output from './Output';
 
 export default function App() {
   return (
-    <Paper sx={{ height: '100%' }} square>
+    <Paper sx={{ height: '100%' }} square elevation={24}>
       <Box
         sx={{
           height: '100%',
           display: 'grid',
-          gridTemplateRows: '50px 2px 1fr 25px',
+          gridTemplateRows: '50px 1fr 25px',
         }}
       >
         <Header />
-        <Divider />
         <Box
           sx={{
             height: '100%',
