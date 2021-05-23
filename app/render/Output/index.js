@@ -2,7 +2,7 @@ import { Box, Paper } from '@material-ui/core';
 
 import { useSelector } from '../store';
 import Header from './Header';
-import List from './List';
+import Terminal from './Terminal';
 
 export default function Output() {
   const outputList = useSelector('outputList') || [];
@@ -18,7 +18,7 @@ export default function Output() {
     >
       <Header />
       <Box sx={{ padding: '15px' }}>
-        <List outputs={outputList} />
+        <Terminal data={outputList} />
       </Box>
     </Paper>
   );
