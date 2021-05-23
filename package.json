@@ -38,6 +38,7 @@
     "@material-ui/core": "next",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "next",
+    "ansi-to-html": "^0.6.15",
     "monaco-editor": "^0.24.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

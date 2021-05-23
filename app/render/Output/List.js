@@ -1,5 +1,13 @@
 import { Alert, Box, Paper } from '@material-ui/core';
 
+function createMarkup(str) {
+  return { __html: str };
+}
+
+function HTMLComponent(str) {
+  return <div dangerouslySetInnerHTML={createMarkup(str)} />;
+}
+
 export default function List({ outputs }) {
   return outputs.map((output, i) => (
     <Paper sx={{ padding: '8px', marginTop: '5px' }} key={i}>
@@ -8,7 +16,7 @@ export default function List({ outputs }) {
           component="pre"
           sx={{ whiteSpace: 'pre-wrap', wordBreak: 'keep-all' }}
         >
-          {output.stdout}
+          {HTMLComponent(output.stdout)}
           {output.stderr && (
             <Alert sx={{ marginTop: '5px' }} severity="error">
               {output.stderr}
